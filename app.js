@@ -9,7 +9,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.post('/', (req, res) => {
+// Update the route to handle weather data to "/weather"
+app.post('/weather', (req, res) => {
     const query = req.body.cityName;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=56e3ec93b5e949f3bc4a136dac7702ac&units=metric`;
 
@@ -38,4 +39,3 @@ app.post('/', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
-

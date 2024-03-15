@@ -28,7 +28,7 @@
         document.getElementById('weatherForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const cityName = document.getElementById('cityName').value;
-            fetch('/', {
+            fetch('/weather', { // Change the URL to '/weather'
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,6 +44,7 @@
             });
         });
     </script>
+    
 </body>
 </html>
 
